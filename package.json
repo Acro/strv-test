@@ -4,6 +4,7 @@
   "description": "",
   "main": "startup.js",
   "scripts": {
+    "start": "node src/startup.js",
     "test": "jasmine-node tests"
   },
   "keywords": [
