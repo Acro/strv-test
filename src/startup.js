@@ -1,7 +1,7 @@
 var co = require("co");
 var mysql = require("promise-mysql"); 
 
-var ZenInjector = require("ZenInjector");
+var ZenInjector = require("zeninjector");
 var container = new ZenInjector();
 
 container.registerAndExport("logger", console.log);
