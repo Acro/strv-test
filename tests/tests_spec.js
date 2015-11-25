@@ -1,6 +1,6 @@
 var frisby = require("frisby");
 
-var root_url = "http://localhost:1337";
+var root_url = "https://stormy-castle-9508.herokuapp.com";
 
 var user = {
 	username: "test_" + Math.round(Math.random()*1000000) + "@user_" + Math.round(Math.random()*1000000) + ".com",

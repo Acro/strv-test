@@ -7,13 +7,13 @@ var koabody = require("koa-body");
 var app = module.exports = koa();
 
 var apiFactory = function (logger, contact_route, login_route, config, auth) {
-	var setupMiddlewares = function* () {
+	var setupMiddlewares = function () {
 		app.use(auth.authenticate);
 		app.use(koalogger());
 		app.use(koabody());
 	};
 
-	var setupRoutes = function* () {
+	var setupRoutes = function () {
 		app.use(route.get("/contacts", contact_route.getContacts));
 		app.use(route.get("/contacts/:id", contact_route.getContact));
 		app.use(route.post("/contacts", contact_route.add));
@@ -28,8 +28,8 @@ var apiFactory = function (logger, contact_route, login_route, config, auth) {
 	var api = {};
 
 	api.start = function* () {
-		yield setupMiddlewares;
-		yield setupRoutes;
+		setupMiddlewares();
+		setupRoutes();
 
 		app.use(compress());
 
